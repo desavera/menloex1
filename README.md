@@ -14,6 +14,14 @@ Enrich incoming data with sessions. Definition of a session: it contains consecu
 eventTime, eventType, category, userId, …, sessionId, sessionStartTime, sessionEndTime  
 Implement it using 1) sql window functions and 2) Spark aggregator.
 
+####Solution:
+
+src/menloex1.scala
+
+basically a script that assumes the input file exactly in the format given and stored in hdfs at /user/root/data directory after parsed with some csv to json like the one provided in the util directory (i.e. csv2json). 
+
+TODO : using Aggregator (2)
+
 ###Task #2:
 Compute the following statistics:
 For each category find median session duration
@@ -25,3 +33,7 @@ Ideally tasks should be implemented using pure SQL on top of Spark DataFrame API
 Spark version 2.2 or higher
 README file in the project can be a plus 
 Example of the input file
+
+## References
+
+https://jaceklaskowski.gitbooks.io/mastering-spark-sql/spark-sql-functions-windows.html
