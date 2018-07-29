@@ -1,3 +1,5 @@
+import org.apache.spark.sql.expressions.Window
+
 val initialDF = spark.read.json("data/input.json")
 val windowDF = initialDF.groupBy(window(initialDF.col("eventTime"),"5 minutes")).agg(count("*") as "counter")
 val renames = Seq ("sessionId","sessionStartTime","sessionEndTime")

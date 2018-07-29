@@ -1,0 +1,2 @@
+# sudo docker run -it --expose 8080 --expose 9000 --dns=8.8.8.8 --volume `pwd`:/docked desavera/b2wdev-mvera:r38-AML /bin/bash
+sudo docker run -it --expose 22 --expose 8080 --expose 9000 --expose 4040 -p 8080:8080 -p 9000:9000 -p 4040:4040 -p 22:22 --dns=8.8.8.8 --volume `pwd`:/docked desavera/gd-mvera:r3-MENLO /bin/bash

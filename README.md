@@ -25,8 +25,20 @@ TODO : using Aggregator (2)
 ###Task #2:
 Compute the following statistics:
 For each category find median session duration
+
+TODO : use UDAF
+
 For each category find # of unique users spending less than 1 min, 1 to 5 mins and more than 5 mins
+
+####Solution:
+
+src/menloex2[].scala set of scripts which basically create a UDF for subtraction and a series of Window functions to work with comparing the aggregated time differences (sessions) with each desired time window.
+
 For each category find top 10 products ranked by time spent by users on product pages - this may require different type of sessions. For this particular task, session lasts until the user is looking at particular product. When particular user switches to another product the new session starts.
+
+####Solution:
+
+src/menloex2-ranking.scala basically aggregates by product the DataFrame created on the previous exercise and uses sum for ranking.
 
 ## General notes:
 Ideally tasks should be implemented using pure SQL on top of Spark DataFrame API.
